@@ -7,5 +7,6 @@ module.exports = {
   'rules': {
     'semi': 0,
     'no-console': 0,
+    'consistent-return' : 0,
   }
 }

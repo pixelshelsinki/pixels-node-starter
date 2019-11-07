@@ -8,9 +8,11 @@ const morgan = require('morgan')
 
 // Custom middleware.
 const { unknownEndpoint } = require('./middleware/unknownEndpoint')
+const { errorHandler } = require('./middleware/errorHandler')
 
 // App config.
 const config = require('./utils/config')
+const knexConfig = require('./knexfile')
 
 // Express instance.
 const app = express()
@@ -25,7 +27,8 @@ app.get('/', (req, res) => {
   res.json('Hello World')
 })
 
-// Catch unhandled routes.
+// Catch unhandled routes, handle uncatched errors.
 app.use(unknownEndpoint)
+app.use(errorHandler)
 
 module.exports = app
