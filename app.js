@@ -28,7 +28,12 @@ app.use(bodyParser.json())
 app.use(cors())
 app.use(morgan('tiny'))
 
-// Routes
+// Controllers.
+const personRouter = require('./controllers/persons')
+
+// Routes.
+app.use('/api/persons', personRouter)
+
 app.get('/', (req, res) => {
   res.json('Hello World')
 })
