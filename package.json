@@ -1,0 +1,37 @@
+{
+  "name": "pixels-node-starter",
+  "version": "1.0.0",
+  "description": "Template for Pixels Helsinki Node.js projects",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=production node index.js",
+    "watch": "NODE_ENV=development nodemon index.js",
+    "lint": "eslint .",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pixelshelsinki/pixels-node-starter.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "objection.js"
+  ],
+  "author": "Pixels Helsinki / Sampo Silvennoinen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pixelshelsinki/pixels-node-starter/issues"
+  },
+  "homepage": "https://github.com/pixelshelsinki/pixels-node-starter#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "nodemon": "^1.19.4"
+  }
+}
