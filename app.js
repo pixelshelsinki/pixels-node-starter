@@ -1,5 +1,7 @@
 // Core imports.
 const express = require('express')
+const Knex = require('knex')
+const { Model } = require('objection')
 
 // Middlewares
 const bodyParser = require('body-parser')
@@ -13,6 +15,10 @@ const { errorHandler } = require('./middleware/errorHandler')
 // App config.
 const config = require('./utils/config')
 const knexConfig = require('./knexfile')
+
+// Database.
+const knex = config.NODE_ENV === 'development' ? Knex(knexConfig.development) : Knex(knexConfig.production);
+Model.knex(knex);
 
 // Express instance.
 const app = express()
