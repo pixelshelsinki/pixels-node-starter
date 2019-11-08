@@ -4,7 +4,7 @@ This is the starter base for Pixels projects using Node.js. The template is API 
 
 ## Issues, improvements and these instructions.
 
-Please read the documentation below before using. **If things are not clear or you find a mistake, or simply a way to improve the theme, please submit an issue or pull request.**
+Please read the documentation below before using. **If things are not clear or you find a mistake, or a way to improve the template, please submit an issue or pull request.**
 
 ## Tools and Technologies
 
@@ -24,13 +24,33 @@ Please read the documentation below before using. **If things are not clear or y
 
 1. Download the repository
 2. Set up env file based on .env.example for DB access
+3. Package.json has dependencies for PostgreSQL, MySQL and SQLite. Remove the ones you are not using.
 3. Create your own tables or run `knex migrate:latest && knex seed:run` to get example database set up.
 4. `yarn run watch` for dev mode or `yarn run start` for production
 
 
 ## Example models & controllers
 
-The repository has simple Person model and Persons Controller. 
+The repository has three simple models with relations and controllers.
 
-* Person model corresponds with persons table in database. 
-* Persons Controller has endpoints for GET, POST, PUT and DELETE HTTP methods.
+* Person, Project and Task models correspond with tables in database. 
+* Persons, Projects and Tasks controllers have endpoints for GET, POST, PUT and DELETE HTTP methods.
+* Project can have many tasks
+* Task can be assigned to one project
+
+## Project structure
+
+```
+pixels-node-starter/                 # -> Project root
+|-- controllers/                     # -> Controllers for endpoints
+|-- database/                        # -> Database migrations & seeds
+  |-- migrations/                    # -> Knex migrations
+  |-- seeds/                         # -> Knex seeds
+|-- middleware/                      # -> Express middleware
+|-- models/                          # -> Objection.js DB models
+|-- services/                        # -> Services & business logic
+|-- utils/                           # -> Misc. utils
+|-- app.js                           # -> Express app
+|-- index.js                         # -> Server entry point
+
+```
