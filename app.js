@@ -11,6 +11,7 @@ const morgan = require('morgan')
 // Custom middleware.
 const { unknownEndpoint } = require('./middleware/unknownEndpoint')
 const { errorHandler, missedErrorHandler } = require('./middleware/errorHandler')
+const { verifyToken } = require('./middleware/verifyToken')
 
 // App config.
 const config = require('./utils/config')
@@ -27,6 +28,7 @@ const app = express()
 app.use(bodyParser.json())
 app.use(cors())
 app.use(morgan(config.NODE_ENV === 'development' ? 'dev' : 'tiny'))
+app.use(verifyToken)
 
 // Controllers.
 const personRouter = require('./controllers/persons')
