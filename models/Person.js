@@ -10,11 +10,11 @@ class Person extends BaseModel {
       type: 'object',
       required: ['firstName', 'lastName', 'email'],
       properties: {
-        id: {type: 'integer'},
-        firstName: {type: 'string', minLength: 1, maxLength: 50},
-        lastName: {type: 'string', minLength: 1, maxLength: 50},
-        email: {type: 'email'},
-      }
+        id: { type: 'integer' },
+        firstName: { type: 'string', minLength: 1, maxLength: 50 },
+        lastName: { type: 'string', minLength: 1, maxLength: 50 },
+        email: { type: 'email' },
+      },
     };
   }
 }

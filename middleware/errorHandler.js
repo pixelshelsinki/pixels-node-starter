@@ -1,24 +1,22 @@
 const {
   ValidationError,
-  NotFoundError
+  NotFoundError,
 } = require('objection')
 
 const {
   DBError,
-  ConstraintViolationError,
   UniqueViolationError,
   NotNullViolationError,
   ForeignKeyViolationError,
   CheckViolationError,
-  DataError
+  DataError,
 } = require('objection-db-errors')
 
 
 /**
  * Main erro handler
  */
-const errorHandler = (err, req, res, next) => {
-  
+const errorHandler = (err, req, res) => {
   if (err instanceof ValidationError) {
     switch (err.type) {
       case 'ModelValidation':
@@ -109,5 +107,5 @@ const missedErrorHandler = (err, req, res, next) => {
 
 module.exports = {
   errorHandler,
-  missedErrorHandler
+  missedErrorHandler,
 }

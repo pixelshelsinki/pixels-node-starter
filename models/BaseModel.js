@@ -6,5 +6,5 @@ class BaseModel extends DBErrors(Model) {
 }
 
 module.exports = {
-  BaseModel
+  BaseModel,
 }
