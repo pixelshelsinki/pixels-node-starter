@@ -26,17 +26,19 @@ const app = express()
 // Apply middlewares.
 app.use(bodyParser.json())
 app.use(cors())
-app.use(morgan('tiny'))
+app.use(morgan(config.NODE_ENV === 'development' ? 'dev' : 'tiny'))
 
 // Controllers.
 const personRouter = require('./controllers/persons')
 const projectRouter = require('./controllers/projects')
 const taskRouter = require('./controllers/tasks')
+const loginRouter = require('./controllers/login')
 
 // Routes.
 app.use('/api/persons', personRouter)
 app.use('/api/projects', projectRouter)
 app.use('/api/tasks', taskRouter)
+app.use('/api/login', loginRouter)
 
 app.get('/', (req, res) => {
   res.json('Hello World')
