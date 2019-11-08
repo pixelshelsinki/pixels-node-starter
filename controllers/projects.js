@@ -8,7 +8,7 @@ const Project = require('../models/Project')
  */
 projectsRouter.get('/', async (request, response, next) => {
   try {
-    const projects = await Project.query()
+    const projects = await Project.query().eager('tasks')
     response.json(projects)
   } catch (error) {
     next(error)

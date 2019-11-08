@@ -31,10 +31,12 @@ app.use(morgan('tiny'))
 // Controllers.
 const personRouter = require('./controllers/persons')
 const projectRouter = require('./controllers/projects')
+const taskRouter = require('./controllers/tasks')
 
 // Routes.
 app.use('/api/persons', personRouter)
 app.use('/api/projects', projectRouter)
+app.use('/api/tasks', taskRouter)
 
 app.get('/', (req, res) => {
   res.json('Hello World')
