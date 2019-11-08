@@ -19,14 +19,31 @@ personsRouter.get('/', async (request, response, next) => {
  * Create new person.
  */
 personsRouter.post('/', async (request, response, next) => {
-  console.log(request.body)
+  const body = request.body
 
   try {
     const person = await Person
       .query()
-      .insert(request.body)
+      .insert(body)
 
     response.status(201).json(person.toJSON())
+  } catch (error) {
+    next(error)
+  }
+})
+
+/**
+ * Update a person.
+ */
+personsRouter.put('/:id', async (request, response, next) => {
+  const body = request.body
+  const id = request.params.id
+
+  try {
+    const updatedPerson = await Person.query()
+      .findById(id)
+      .patch(body)
+    response.status(200).json(updatedPerson)
   } catch (error) {
     next(error)
   }

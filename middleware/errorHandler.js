@@ -18,7 +18,7 @@ const {
  * Main erro handler
  */
 const errorHandler = (err, req, res, next) => {
-  console.log('here!')
+  
   if (err instanceof ValidationError) {
     switch (err.type) {
       case 'ModelValidation':
