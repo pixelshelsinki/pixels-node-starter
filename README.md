@@ -18,7 +18,7 @@ Please read the documentation below before using. **If things are not clear or y
 
 * [Node.js](https://nodejs.org/)
 * [Yarn](https://yarnpkg.com/lang/en/)
-* [PostgresQL](https://www.postgresql.org/), [MySQL](https://www.mysql.com/), SQLite or other Knex supported SQL database.
+* [PostgresQL](https://www.postgresql.org/), [MySQL](https://www.mysql.com/), [SQLite](https://www.sqlite.org/index.html) or other Knex supported SQL database.
 
 ## Installation
 
@@ -31,12 +31,33 @@ Please read the documentation below before using. **If things are not clear or y
 
 ## Example models & controllers
 
-The repository has three simple models with relations and controllers.
+The repository has simple models with relations and controllers.
 
 * Person, Project and Task models correspond with tables in database. 
 * Persons, Projects and Tasks controllers have endpoints for GET, POST, PUT and DELETE HTTP methods.
 * Project can have many tasks
 * Task can be assigned to one project
+
+## Auth
+
+Project contains JWT based service for locking endpoints behind login. Use `/api/login` endpoint to login with username & password. Endpoint returns JWT token, that you can include with authorization headers.
+
+```
+Header key: Authorization
+Header value: Bearer YOUR_JWT_FROM_RESPONSE
+```
+
+App has middleware for authenticating tokens. To enable token authentication for endpoint, check truthiness of `request.authorized`.
+
+```
+yourRouter.post('/:id', async (request, response, next) => {
+  if( request.authorized ) {
+  	// Your business logic here
+  } else {
+  	// Your error handling
+  }
+})
+```
 
 ## Project structure
 

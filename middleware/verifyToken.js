@@ -10,7 +10,7 @@ const verifyToken = async (request, response, next) => {
   if (authorization && authorization.toLowerCase().startsWith('bearer ')) {
     const token = authorization.substring(7)
 
-    //Verify token
+    // Verify token
     request.authorized = await loginService.authenticate(token)
   } else {
     request.authorized = false
