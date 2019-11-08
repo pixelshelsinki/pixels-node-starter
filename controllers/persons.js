@@ -49,4 +49,19 @@ personsRouter.put('/:id', async (request, response, next) => {
   }
 })
 
+/**
+ * Delete a person.
+ */
+personsRouter.delete('/:id', async (request, response, next) => {
+  const id = request.params.id
+
+  try {
+    const deletedPerson = await Person.query().deleteById(id)
+
+    response.status(204)
+  } catch (error) {
+    next(error)
+  }
+})
+
 module.exports = personsRouter
