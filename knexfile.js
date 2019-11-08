@@ -14,6 +14,12 @@ module.exports = {
         conn.run('PRAGMA foreign_keys = ON', cb);
       },
     },
+    seeds: {
+      directory: './database/seeds/',
+    },
+    migrations: {
+      directory: './database/migrations/',
+    },
   },
 
   // PostgreSQL production example.
@@ -24,9 +30,15 @@ module.exports = {
   //     min: 2,
   //     max: 10,
   //   },
+  //   seeds: {
+  //     directory: './database/seeds/',
+  //   },
+  //   migrations: {
+  //     directory: './database/migrations/',
+  //   },
   // },
 
-  // MySQL production example
+  // // MySQL production example
   // production: {
   //   client: 'mysql',
   //   connection: {
@@ -36,5 +48,11 @@ module.exports = {
   //     database: process.env.DB_NAME,
   //   },
   //   pool: { min: 0, max: 7 },
+  //   seeds: {
+  //     directory: './database/seeds/',
+  //   },
+  //   migrations: {
+  //     directory: './database/migrations/',
+  //   },
   // },
 }

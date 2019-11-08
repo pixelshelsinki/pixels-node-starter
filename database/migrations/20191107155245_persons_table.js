@@ -5,6 +5,7 @@ exports.up = function(knex) {
       table.increments('id').primary();
       table.string('firstName');
       table.string('lastName');
+      table.string('email');
     })
 };
 
