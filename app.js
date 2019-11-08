@@ -10,7 +10,7 @@ const morgan = require('morgan')
 
 // Custom middleware.
 const { unknownEndpoint } = require('./middleware/unknownEndpoint')
-const { errorHandler } = require('./middleware/errorHandler')
+const { errorHandler, missedErrorHandler } = require('./middleware/errorHandler')
 
 // App config.
 const config = require('./utils/config')
@@ -41,5 +41,6 @@ app.get('/', (req, res) => {
 // Catch unhandled routes, handle uncatched errors.
 app.use(unknownEndpoint)
 app.use(errorHandler)
+app.use(missedErrorHandler)
 
 module.exports = app
