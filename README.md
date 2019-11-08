@@ -8,17 +8,17 @@ Please read the documentation below before using. **If things are not clear or y
 
 ## Tools and Technologies
 
-* |Express|(https://expressjs.com/) - Node framework
-* |Objection.js|(https://vincit.github.io/objection.js/) - ORM
-* |Knex|(http://knexjs.org/) - Query builder
-* SQL databae of your choice
-* |Nodemon|(https://www.npmjs.com/package/nodemon) - dev server
+* [Express](https://expressjs.com/) - Node framework
+* [Objection.js](https://vincit.github.io/objection.js/) - ORM
+* [Knex](http://knexjs.org/) - Query builder
+* SQL database of your choice
+* [Nodemon](https://www.npmjs.com/package/nodemon) - dev server
 
 ## Requirements
 
 * [Node.js](https://nodejs.org/)
 * [Yarn](https://yarnpkg.com/lang/en/)
-* [PostgresQL](https://www.postgresql.org/), [PostgresQL](https://www.mysql.com/), SQLite or other Knex supported SQL.
+* [PostgresQL](https://www.postgresql.org/), [MySQL](https://www.mysql.com/), SQLite or other Knex supported SQL database.
 
 ## Installation
 
