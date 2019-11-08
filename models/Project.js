@@ -1,8 +1,23 @@
+const path = require('path');
+const { Model } = require('objection')
 const { BaseModel } = require('./BaseModel')
 
 class Project extends BaseModel {
   static get tableName() {
     return 'projects';
+  }
+
+  static get relationMappings() {
+    return {
+      tasks: {
+        relation: Model.HasManyRelation,
+        modelClass: path.join(__dirname, 'Task'),
+        join: {
+          from: 'projects.id',
+          to: 'tasks.projectID',
+        },
+      },
+    }
   }
 
   static get jsonSchema() {
