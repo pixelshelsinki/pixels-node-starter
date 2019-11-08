@@ -4,6 +4,7 @@ const projects = []
 
 for( let i = 0; i < 15; i++ ) {
   projects.push( {
+  	id: i,
     name: faker.company.companyName(),
   } )
 }
