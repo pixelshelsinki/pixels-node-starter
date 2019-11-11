@@ -26,7 +26,7 @@ Please read the documentation below before using. **If things are not clear or y
 2. Set up env file based on .env.example for DB access
 3. Package.json has dependencies for PostgreSQL, MySQL and SQLite. Remove the ones you are not using.
 3. Create your own tables or run `knex migrate:latest && knex seed:run` to get example database set up.
-4. `yarn run watch` for dev mode or `yarn run start` for production
+4. `yarn run dev` for dev mode or `yarn run start` for production
 
 
 ## Example models & controllers
@@ -56,6 +56,17 @@ yourRouter.post('/:id', async (request, response, next) => {
   } else {
   	// Your error handling
   }
+})
+```
+
+Or you can use requireAuth middleware to handle auth logic
+
+```
+// Auth middleware
+const { requireAuth } = require('../middleware/requireAuth')
+
+yourRouter.post('/:id', requireAuth, async (request, response, next) => {
+  // Your ordinary business logic.
 })
 ```
 
