@@ -22,6 +22,9 @@ const knexConfig = require('./knexfile')
 const knex = config.NODE_ENV === 'development' ? Knex(knexConfig.development) : Knex(knexConfig.production);
 Model.knex(knex);
 
+// Routes
+const routes = require('./routes');
+
 // Express instance.
 const app = express()
 
@@ -32,21 +35,8 @@ app.use(cors())
 app.use(morgan(config.NODE_ENV === 'development' ? 'dev' : 'tiny'))
 app.use(verifyToken)
 
-// Controllers.
-const personRouter = require('./controllers/persons')
-const projectRouter = require('./controllers/projects')
-const taskRouter = require('./controllers/tasks')
-const loginRouter = require('./controllers/login')
-
-// Routes.
-app.use('/api/persons', personRouter)
-app.use('/api/projects', projectRouter)
-app.use('/api/tasks', taskRouter)
-app.use('/api/login', loginRouter)
-
-app.get('/', (req, res) => {
-  res.json('Hello World')
-})
+// Append all routes.
+app.use(routes)
 
 // Catch unhandled routes, handle uncatched errors.
 app.use(unknownEndpoint)
