@@ -4,7 +4,7 @@
   "description": "Template for Pixels Helsinki Node.js projects",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=production node index.js",
+    "start": "NODE_ENV=development pm2 start ecosystem.config.js --env production",
     "watch": "NODE_ENV=development nodemon index.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
@@ -40,6 +40,7 @@
     "objection": "^1.6.11",
     "objection-db-errors": "^1.1.1",
     "pg": "^7.12.1",
+    "pm2": "^4.1.2",
     "sqlite3": "^4.1.0"
   },
   "devDependencies": {
