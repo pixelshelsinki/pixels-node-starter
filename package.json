@@ -8,8 +8,11 @@
     "dev": "NODE_ENV=development nodemon index.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "migrate": "knex migrate:latest",
-    "test": "test"
+    "db:migrate": "knex migrate:latest",
+    "db:seed": "knex seed:run",
+    "db:fresh": "rimraf local.db && knex migrate:latest && knex seed:run",
+    "tests:prepare": "NODE_ENV=test knex migrate:latest && NODE_ENV=test knex seed:run",
+    "test": "yarn run tests:prepare && jest --verbose --runInBand --passWithNoTests && rimraf local-test.db"
   },
   "repository": {
     "type": "git",
@@ -48,6 +51,8 @@
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
     "faker": "^4.1.0",
-    "nodemon": "^1.19.4"
+    "jest": "^24.9.0",
+    "nodemon": "^1.19.4",
+    "rimraf": "^3.0.0"
   }
 }

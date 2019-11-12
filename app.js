@@ -19,7 +19,7 @@ const config = require('./utils/config')
 const knexConfig = require('./knexfile')
 
 // Database.
-const knex = config.NODE_ENV === 'development' ? Knex(knexConfig.development) : Knex(knexConfig.production);
+const knex = Knex(knexConfig[config.NODE_ENV]);
 Model.knex(knex);
 
 // Routes

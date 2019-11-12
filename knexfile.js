@@ -22,6 +22,25 @@ module.exports = {
     },
   },
 
+  test: {
+    client: 'sqlite3',
+    useNullAsDefault: true,
+    connection: {
+      filename: './local-test.db',
+    },
+    pool: {
+      afterCreate: (conn, cb) => {
+        conn.run('PRAGMA foreign_keys = ON', cb);
+      },
+    },
+    seeds: {
+      directory: './database/seeds/tests/',
+    },
+    migrations: {
+      directory: './database/migrations/',
+    },
+  },
+
   // PostgreSQL production example.
   // production: {
   //   client: 'pg',
