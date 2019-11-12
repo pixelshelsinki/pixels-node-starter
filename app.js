@@ -43,4 +43,9 @@ app.use(unknownEndpoint)
 app.use(errorHandler)
 app.use(missedErrorHandler)
 
+// Append knex.destroy method for tests
+if( config.NODE_ENV === 'test' ) {
+  app['destroy'] = () => knex.destroy()
+}
+
 module.exports = app

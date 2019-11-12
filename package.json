@@ -11,8 +11,8 @@
     "db:migrate": "knex migrate:latest",
     "db:seed": "knex seed:run",
     "db:fresh": "rimraf local.db && knex migrate:latest && knex seed:run",
-    "tests:prepare": "NODE_ENV=test knex migrate:latest && NODE_ENV=test knex seed:run",
-    "test": "yarn run tests:prepare && jest --verbose --runInBand --passWithNoTests && rimraf local-test.db"
+    "tests:prepare": "rimraf local-test.db && NODE_ENV=test knex migrate:latest && NODE_ENV=test knex seed:run",
+    "test": "yarn run tests:prepare && jest --verbose --runInBand --passWithNoTests"
   },
   "repository": {
     "type": "git",
@@ -50,9 +50,11 @@
     "eslint": "^6.6.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^23.0.3",
     "faker": "^4.1.0",
     "jest": "^24.9.0",
     "nodemon": "^1.19.4",
-    "rimraf": "^3.0.0"
+    "rimraf": "^3.0.0",
+    "supertest": "^4.0.2"
   }
 }
