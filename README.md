@@ -12,6 +12,7 @@ Please read the documentation below before using. **If things are not clear or y
 * [Objection.js](https://vincit.github.io/objection.js/) - ORM
 * [Knex](http://knexjs.org/) - Query builder
 * SQL database of your choice
+* [Jest](https://jestjs.io/) and [Supertest](https://github.com/visionmedia/supertest) - tests suites
 * [Nodemon](https://www.npmjs.com/package/nodemon) - dev server
 
 ## Requirements
@@ -40,7 +41,7 @@ The repository has simple models with relations and controllers.
 
 ## Auth
 
-Project contains JWT based service for locking endpoints behind login. Use `/api/login` endpoint to login with username & password. Endpoint returns JWT token, that you can include with authorization headers.
+Project contains JWT based service for locking endpoints behind login. Use `/api/login` endpoint to login with username & password. Endpoint returns JWT token, that you can include with authorization headers. Example database has user `root` with password `root`.
 
 ```
 Header key: Authorization
@@ -69,6 +70,20 @@ yourRouter.post('/:id', requireAuth, async (request, response, next) => {
   // Your ordinary business logic.
 })
 ```
+
+## Tests & lint
+
+Project comes with Eslint, Jest & Supertest. Eslint is configured to follow AirBnb-styleguide.
+
+Lint commands:
+`yarn run lint` --> lint errors
+`yarn run lint:fix` --> autofix fixable errors
+
+Test commands:
+`yarn run tests::prepare` --> drops old test DB, creates new one from migrations & test seeds.
+`yarn run test` --> Runs prepare & jest tests.
+
+`tests` folder has example tests for one API endpoint using Jest & Supertest.
 
 ## Project structure
 
