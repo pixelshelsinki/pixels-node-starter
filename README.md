@@ -49,7 +49,7 @@ Header value: Bearer YOUR_JWT_FROM_RESPONSE
 
 App has middleware for authenticating tokens. To enable token authentication for endpoint, check truthiness of `request.authorized`.
 
-```
+```javascript
 yourRouter.post('/:id', async (request, response, next) => {
   if( request.authorized ) {
   	// Your business logic here
@@ -61,7 +61,7 @@ yourRouter.post('/:id', async (request, response, next) => {
 
 Or you can use requireAuth middleware to handle auth logic
 
-```
+```javascript
 // Auth middleware
 const { requireAuth } = require('../middleware/requireAuth')
 
