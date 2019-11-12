@@ -80,6 +80,7 @@ pixels-node-starter/                 # -> Project root
   |-- seeds/                         # -> Knex seeds
 |-- middleware/                      # -> Express middleware
 |-- models/                          # -> Objection.js DB models
+|-- routes/                          # -> Route declarations
 |-- services/                        # -> Services & business logic
 |-- utils/                           # -> Misc. utils
 |-- app.js                           # -> Express app
