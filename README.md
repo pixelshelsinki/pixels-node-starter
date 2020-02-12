@@ -85,6 +85,34 @@ Test commands:
 
 `tests` folder has example tests for one API endpoint using Jest & Supertest.
 
+
+## Other use cases
+
+The starter can be stripped down for other purposes.
+
+#### Cloud Function
+
+Starter can pretty easily be modified to run as cloud function. For example to run as Firebase Cloud Function:
+
+Swap index.js for Firebase cloudfunction index.
+
+```
+const functions = require('firebase-functions');
+const app = require('./app')
+
+// Hook starter on cloud function.
+exports.app = functions.https.onRequest(app);
+```
+
+#### Non-database app
+
+If you don't need database portion, just remove following components:
+
+- PostGres / MySQL / SQLite
+- Knex & Models directory
+- Database directory
+- References to DB in main App
+
 ## Project structure
 
 ```
