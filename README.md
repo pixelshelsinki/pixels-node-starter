@@ -92,7 +92,9 @@ The starter can be stripped down for other purposes.
 
 #### Cloud Function
 
-Starter can pretty easily be modified to run as cloud function. For example to run as Firebase Cloud Function:
+Starter can pretty easily be modified to run as cloud function.
+
+As **Firebase Cloud Function**:
 
 Swap index.js for Firebase cloudfunction index.
 
@@ -103,6 +105,21 @@ const app = require('./app')
 // Hook starter on cloud function.
 exports.app = functions.https.onRequest(app);
 ```
+
+With **Serverless Framework** to AWS / GCP:
+
+Swap index.js for Serverless setup.
+
+```
+const serverless = require('serverless-http');
+const app = require('./app')
+
+// Export starter with Serverless handler.
+module.exports.app = serverless(app);
+```
+
+Then write appropriate serverless.yml for triggers and deployment.
+
 
 #### Non-database app
 
