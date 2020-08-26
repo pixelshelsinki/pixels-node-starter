@@ -10,7 +10,6 @@ describe('Testing GET: /api/persons', () => {
       .expect(200)
   })
 
-
   test('Returns all 3 persons', async () => {
     const response = await api.get('/api/persons')
 
