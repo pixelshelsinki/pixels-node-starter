@@ -24,10 +24,18 @@ Please read the documentation below before using. **If things are not clear or y
 ## Installation
 
 1. Download the repository
-2. Set up env file based on .env.example for DB access
-3. Package.json has dependencies for PostgreSQL, MySQL and SQLite. Remove the ones you are not using.
+2. Install the DB driver you are going to use.
+3. Set up env file based on .env.example for DB access
 3. Create your own tables or run `knex migrate:latest && knex seed:run` to get example database set up.
 4. `yarn run dev` for dev mode or `yarn run start` for production
+
+Possible database drivers:
+```
+yarn add pg
+yarn add sqlite3
+yarn add mysql
+yarn add mysql2
+```
 
 
 ## Example models & controllers
