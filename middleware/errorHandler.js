@@ -1,16 +1,14 @@
 const {
   ValidationError,
   NotFoundError,
-} = require('objection')
-
-const {
   DBError,
+  ConstraintViolationError,
   UniqueViolationError,
   NotNullViolationError,
   ForeignKeyViolationError,
   CheckViolationError,
-  DataError,
-} = require('objection-db-errors')
+  DataError
+} = require('objection');
 
 
 /**

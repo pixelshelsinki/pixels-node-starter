@@ -1,8 +1,7 @@
 const path = require('path');
 const { Model } = require('objection')
-const { BaseModel } = require('./BaseModel')
 
-class Project extends BaseModel {
+class Project extends Model {
   static get tableName() {
     return 'projects';
   }
