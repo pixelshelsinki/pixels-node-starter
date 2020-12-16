@@ -15,10 +15,10 @@ module.exports = {
       },
     },
     seeds: {
-      directory: './database/seeds/',
+      directory: './src/database/seeds/',
     },
     migrations: {
-      directory: './database/migrations/',
+      directory: './src/database/migrations/',
     },
   },
 
@@ -34,10 +34,10 @@ module.exports = {
       },
     },
     seeds: {
-      directory: './database/seeds/tests/',
+      directory: './src/database/seeds/tests/',
     },
     migrations: {
-      directory: './database/migrations/',
+      directory: './src/database/migrations/',
     },
   },
 
@@ -50,10 +50,10 @@ module.exports = {
   //     max: 10,
   //   },
   //   seeds: {
-  //     directory: './database/seeds/',
+  //     directory: './src/database/seeds/',
   //   },
   //   migrations: {
-  //     directory: './database/migrations/',
+  //     directory: './src/database/migrations/',
   //   },
   // },
 
@@ -68,10 +68,10 @@ module.exports = {
   //   },
   //   pool: { min: 0, max: 7 },
   //   seeds: {
-  //     directory: './database/seeds/',
+  //     directory: './src/database/seeds/',
   //   },
   //   migrations: {
-  //     directory: './database/migrations/',
+  //     directory: './src/database/migrations/',
   //   },
   // },
 }

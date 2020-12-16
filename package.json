@@ -6,8 +6,8 @@
   "scripts": {
     "start": "NODE_ENV=development pm2 start ecosystem.config.js --env production",
     "dev": "NODE_ENV=development nodemon index.js",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "lint": "eslint src",
+    "fix": "eslint src --fix",
     "db:migrate": "knex migrate:latest",
     "db:seed": "knex seed:run",
     "db:fresh": "rimraf local.db && knex migrate:latest && knex seed:run",
@@ -24,7 +24,6 @@
     "objection.js"
   ],
   "author": "Pixels Helsinki / Sampo Silvennoinen",
-  "license": "MIT",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/pixelshelsinki/pixels-node-starter/issues"
