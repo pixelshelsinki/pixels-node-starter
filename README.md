@@ -1,6 +1,6 @@
 # Pixels Node Starter
 
-This is the starter base for Pixels projects using Node.js. The template is API first starting point without frontend.
+This is the starter base for Pixels projects using Node.js & Express. The template is API first starting point without frontend.
 
 ## Issues, improvements and these instructions.
 
@@ -85,7 +85,7 @@ Project comes with Eslint, Jest & Supertest. Eslint is configured to follow AirB
 
 Lint commands:
 `yarn run lint` --> lint errors
-`yarn run lint:fix` --> autofix fixable errors
+`yarn run fix` --> autofix fixable errors
 
 Test commands:
 `yarn run tests::prepare` --> drops old test DB, creates new one from migrations & test seeds.
@@ -114,21 +114,6 @@ const app = require('./app')
 exports.app = functions.https.onRequest(app);
 ```
 
-With **Serverless Framework** to AWS / GCP:
-
-Swap index.js for Serverless setup.
-
-```
-const serverless = require('serverless-http');
-const app = require('./app')
-
-// Export starter with Serverless handler.
-module.exports.app = serverless(app);
-```
-
-Then write appropriate serverless.yml for triggers and deployment.
-
-
 #### Non-database app
 
 If you don't need database portion, just remove following components:
@@ -141,17 +126,18 @@ If you don't need database portion, just remove following components:
 ## Project structure
 
 ```
-pixels-node-starter/                 # -> Project root
-|-- controllers/                     # -> Controllers for endpoints
-|-- database/                        # -> Database migrations & seeds
-  |-- migrations/                    # -> Knex migrations
-  |-- seeds/                         # -> Knex seeds
-|-- middleware/                      # -> Express middleware
-|-- models/                          # -> Objection.js DB models
-|-- routes/                          # -> Route declarations
-|-- services/                        # -> Services & business logic
-|-- utils/                           # -> Misc. utils
-|-- app.js                           # -> Express app
-|-- index.js                         # -> Server entry point
+pixels-node-starter/                   # -> Project root, configs
+|-- src/
+  |-- controllers/                     # -> Controllers for endpoints
+  |-- database/                        # -> Database migrations & seeds
+    |-- migrations/                    # -> Knex migrations
+    |-- seeds/                         # -> Knex seeds
+  |-- middleware/                      # -> Express middleware
+  |-- models/                          # -> Objection.js DB models
+  |-- routes/                          # -> Route declarations
+  |-- services/                        # -> Services & business logic
+  |-- utils/                           # -> Misc. utils
+  |-- app.js                           # -> Express app
+|-- index.js                           # -> Server entry point
 
 ```

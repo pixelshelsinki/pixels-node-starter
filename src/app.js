@@ -16,7 +16,7 @@ const { verifyToken } = require('./middleware/verifyToken')
 
 // App config.
 const config = require('./utils/config')
-const knexConfig = require('./knexfile')
+const knexConfig = require('../knexfile')
 
 // Database.
 const knex = Knex(knexConfig[config.NODE_ENV]);

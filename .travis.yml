@@ -1,17 +1,15 @@
 language: node_js
 node_js:
-  - '10'
-  - '11'
   - '12'
+  - '14'
 
 cache:
   directories:
   - 'node_modules'
 
 env:
-  - TRAVIS_NODE_VERSION="10"
-  - TRAVIS_NODE_VERSION="11"
   - TRAVIS_NODE_VERSION="12"
+  - TRAVIS_NODE_VERSION="14"
 
 before_install:
   - source ~/.nvm/nvm.sh && nvm install $TRAVIS_NODE_VERSION && nvm use $TRAVIS_NODE_VERSION
