@@ -8,6 +8,7 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const morgan = require('morgan')
 const helmet = require('helmet')
+const compression = require('compression')
 
 // Custom middleware.
 const { unknownEndpoint } = require('./middleware/unknownEndpoint')
@@ -30,6 +31,7 @@ const app = express()
 
 // Apply middlewares.
 app.use(helmet())
+app.use(compression())
 app.use(bodyParser.json())
 app.use(cors())
 app.use(morgan(config.NODE_ENV === 'development' ? 'dev' : 'tiny'))
