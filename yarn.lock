@@ -4443,9 +4443,9 @@ needle@2.4.0:
     sax "^1.2.4"
 
 needle@^2.2.1, needle@^2.5.0:
-  version "2.5.2"
-  resolved "https://registry.yarnpkg.com/needle/-/needle-2.5.2.tgz#cf1a8fce382b5a280108bba90a14993c00e4010a"
-  integrity sha512-LbRIwS9BfkPvNwNHlsA41Q29kL2L/6VaOJ0qisM5lLWsTV3nP15abO5ITL6L81zqFhzjRKDAYjpcBcwM0AVvLQ==
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/needle/-/needle-2.6.0.tgz#24dbb55f2509e2324b4a99d61f413982013ccdbe"
+  integrity sha512-KKYdza4heMsEfSWD7VPUIz3zX2XDwOyX2d+geb4vrERZMT5RMU6ujjaD+I5Yr54uZxQ2w6XRTAhHBbSCyovZBg==
   dependencies:
     debug "^3.2.6"
     iconv-lite "^0.4.4"
@@ -4768,9 +4768,9 @@ object.values@^1.1.1:
     has "^1.0.3"
 
 objection@^2.2.4:
-  version "2.2.4"
-  resolved "https://registry.yarnpkg.com/objection/-/objection-2.2.4.tgz#47e6a41f7a1b6bb750a66b638885a07e8f414b6e"
-  integrity sha512-yY/Pf6gLWVnTrkhYMZ4qjuk4ztJ8NHizfC1S/cp89oSevd9hDS2GqCYKQMHJRnY+Wu+qFtqMMFgWV3qRQrX0iA==
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/objection/-/objection-2.2.5.tgz#ecbe46ea118b94fff5853aa9b225b88fb2527cb8"
+  integrity sha512-17VDi2txhQAn2/G0JnNy2C6WfM2Zo03/8tyvoNMg7n/qv3uf+hetFuLjg5FxD0ZxeB69kuX/k7l2UsGboPdnFA==
   dependencies:
     ajv "^6.12.6"
     db-errors "^0.2.3"
