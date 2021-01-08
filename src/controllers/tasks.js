@@ -8,7 +8,7 @@ const Task = require('../models/Task')
  */
 tasksRouter.get('/', async (request, response, next) => {
   try {
-    const tasks = await Task.query().eager('project')
+    const tasks = await Task.query().withGraphFetched('project')
     response.json(tasks)
   } catch (error) {
     next(error)
